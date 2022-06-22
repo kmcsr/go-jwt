@@ -10,10 +10,13 @@ import (
 	"time"
 )
 
-var NotVaildErr = errors.New("Not a vaild jwt")
-var NotVerifiedErr = errors.New("Not a verified jwt")
-var ExpiredErr = errors.New("Token expired")
-var NotBeforeErr = errors.New("Token is not in activity")
+var (
+	NotVaildErr = errors.New("Not a vaild jwt")
+	NotVerifiedErr = errors.New("Not a verified jwt")
+	ExpiredErr = errors.New("Token expired")
+	NotBeforeErr = errors.New("Token is not in activity")
+	SubjectNotMatch = errors.New("Token subject not match")
+)
 
 type Map = map[string]interface{}
 

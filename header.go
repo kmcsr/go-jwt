@@ -43,6 +43,7 @@ type Header struct{
 	Issuer string         `json:"iss,omitempty"`
 	Audience string       `json:"aud,omitempty"`
 	Subject string        `json:"sub,omitempty"`
+	Extra interface{}     `json:"ext,omitempty"`
 }
 
 func NewHeader()(h *Header){
@@ -102,5 +103,10 @@ func (h *Header)SetAudience(v string)(*Header){
 
 func (h *Header)SetSubject(v string)(*Header){
 	h.Subject = v
+	return h
+}
+
+func (h *Header)SetExtra(v interface{})(*Header){
+	h.Extra = v
 	return h
 }
